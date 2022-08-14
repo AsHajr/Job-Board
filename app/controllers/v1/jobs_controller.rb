@@ -5,7 +5,7 @@ module V1
 
         # GET /jobs
         def index
-            @jobs = Job.all
+            @jobs = Job.filter(params.slice(:id, :title, :created_by, :created_at, :updated_at))
             json_response(@jobs)
         end
 
@@ -35,7 +35,6 @@ module V1
         private
 
         def job_params
-            # whitelist params
             params.permit(:title, :description)
         end
 
