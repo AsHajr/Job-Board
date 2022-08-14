@@ -1,10 +1,11 @@
 module V1
     class JobsController < ApplicationController
         before_action :set_job, only: [:show, :update, :destroy]
+        load_and_authorize_resource
 
         # GET /jobs
         def index
-            @jobs = current_user.jobs
+            @jobs = Job.all
             json_response(@jobs)
         end
 

@@ -85,10 +85,16 @@ RSpec.describe "Jobs", type: :request do
   end
 
   describe 'PUT /jobs/:id' do
-     let(:valid_attributes) { { title: 'Shopping' }.to_json }
 
-    context 'when the record exists' do
+     let(:valid_attributes) { { title: 'title', description: "description" }.to_json }
+
+    context 'when the record exists & user is authorized' do
       before { put "/jobs/#{job_id}", params: valid_attributes, headers: headers }
+      let (:job) {Job.find(job_id)}
+
+      it 'make sure user is authorized' do
+        expect(job["created_by"]).to eq(user.id.to_s)
+      end
 
       it 'updates the record' do
         expect(response.body).to be_empty
@@ -96,6 +102,15 @@ RSpec.describe "Jobs", type: :request do
 
       it 'returns status code 204' do
         expect(response).to have_http_status(204)
+      end
+    end
+
+     context 'when the user is unauthorized' do
+      let(:jobs) { create_list(:job, 10, created_by: (user.id+1)) }
+      before { put "/jobs/#{job_id}", params: valid_attributes, headers: headers }
+
+      it 'returns status code 401' do
+        expect(response).to have_http_status(401)
       end
     end
   end
