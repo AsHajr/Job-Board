@@ -3,8 +3,9 @@ module V1
         before_action :set_job, only: [:show, :update, :destroy]
         load_and_authorize_resource
 
-        # GET /jobs only non expired jobs
+        # GET /jobs 
         def index
+            # get current user non expired jobs and filter them 
             @jobs = Job.filter(params.slice(:title, :created_at)).paginate(page: params[:page], per_page: 20)
             available_jobs = []
             @jobs.each do |job|
@@ -22,6 +23,7 @@ module V1
 
         # POST /jobs
         def create
+            # create jos belonging to current user
             @job = current_user.jobs.create!(job_params)
             json_response(@job, :created)
         end

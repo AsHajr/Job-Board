@@ -8,6 +8,7 @@ RSpec.describe "Jobs", type: :request do
 
   let(:headers) { valid_headers }
 
+  # Test suite for GET /todos 
   describe 'GET /jobs' do
     before { get '/jobs', params: {}, headers: headers }
 
@@ -30,6 +31,7 @@ RSpec.describe "Jobs", type: :request do
     end
   end
 
+  # Test suite for GET /todos/:id
   describe 'GET /jobs/:id' do
     before { get "/jobs/#{job_id}", params: {}, headers: headers }
 
@@ -57,7 +59,8 @@ RSpec.describe "Jobs", type: :request do
       end
     end
   end
-
+  
+  # Test suite for POST /todos
   describe 'POST /jobs' do
      let(:valid_attributes) do
       { title: 'job title', description:"job description", created_by: user.id.to_s }.to_json
@@ -93,6 +96,7 @@ RSpec.describe "Jobs", type: :request do
 
   end
 
+  # Test suite for PUT /todos/:id
   describe 'PUT /jobs/:id' do
 
      let(:valid_attributes) { { title: 'title', description: "description" }.to_json }
@@ -124,6 +128,7 @@ RSpec.describe "Jobs", type: :request do
     end
   end
 
+  # Test suite for DELETE /todos/:id
   describe 'DELETE /jobs/:id' do
     before { delete "/jobs/#{job_id}", params: {}, headers: headers }
 
