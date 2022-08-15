@@ -3,9 +3,9 @@ module V1
         before_action :set_job, only: [:show, :update, :destroy]
         load_and_authorize_resource
 
-        # GET /jobs
+        # GET /jobs only non expired jobs
         def index
-            @jobs = Job.filter(params.slice(:title, :created_at))
+            @jobs = Job.filter(params.slice(:title, :created_at)).paginate(page: params[:page], per_page: 20)
             available_jobs = []
             @jobs.each do |job|
                 if job.expiry_date

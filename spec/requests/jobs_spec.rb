@@ -9,23 +9,20 @@ RSpec.describe "Jobs", type: :request do
   let(:headers) { valid_headers }
 
   describe 'GET /jobs' do
-    
-    context 'when the jobs are avaialable'do
-      before { get '/jobs', params: {}, headers: headers }
+    before { get '/jobs', params: {}, headers: headers }
 
+    context 'when the jobs are avaialable'do
       it 'returns jobs' do
         expect(json).not_to be_empty
         expect(json.size).to eq(10)
       end
       
-    
       it 'returns status code 200' do
         expect(response).to have_http_status(200)
       end
     end
     context 'when the jobs are expired' do
       let(:jobs) { create_list(:job, 10, created_by: user.id, expiry_date: Date.yesterday) }
-      before { get '/jobs', params: {}, headers: headers }
 
         it 'does not return expired jobs' do
           expect(json.size).to eq(0)

@@ -63,3 +63,10 @@ end
 gem 'jwt'
 
 gem 'cancancan'
+
+gem 'active_model_serializers', '~> 0.10.0'
+
+gem 'will_paginate', '~> 3.3'
+
+gem 'faker'
+
