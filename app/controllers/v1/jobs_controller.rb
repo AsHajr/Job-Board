@@ -5,8 +5,19 @@ module V1
 
         # GET /jobs
         def index
-            @jobs = Job.filter(params.slice(:id, :title, :created_by, :created_at, :updated_at))
-            json_response(@jobs)
+            @jobs = Job.filter(params.slice(:title, :created_at))
+            available_jobs = []
+            @jobs.each do |job|
+                if job.expiry_date
+                    d = DateTime.now
+                    if job.expiry_date.to_date >= d
+                        available_jobs << job
+                    end
+                else
+                  available_jobs << job
+                end
+            end
+            json_response(available_jobs)
         end
 
         # POST /jobs
@@ -35,7 +46,7 @@ module V1
         private
 
         def job_params
-            params.permit(:title, :description)
+            params.permit(:title, :description, :expiry_date, :created_at)
         end
 
         def set_job
