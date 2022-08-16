@@ -14,6 +14,7 @@ module V1
         end
 
         # POST /jobs/:job_id/jobapps
+        #  Parameters: created_by
         def create
             @job.jobapps.create!(jobapp_params)
             json_response(@job, :created)

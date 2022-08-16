@@ -22,6 +22,7 @@ module V1
         end
 
         # POST /jobs
+        #  Parameters: title, description, (optional) expiry_date
         def create
             # create jos belonging to current user
             @job = current_user.jobs.create!(job_params)
