@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<summary><b>Dcumentations are in the doc folder</b></summary>
+<br>
+<summary><b>Here is a brief decumentation</b></summary>
+<br>
+<p>
+	<b>POST requests parameters:</b>
+</p>
+<p>
+	
+	/signup : name, email, password, password_confirmation
 
-Things you may want to cover:
+</p>
+<p>
 
-* Ruby version
+	/auth/login : email, password
+	
+</p>
+</p>
+<p>
+	
+	/jobs : title, description
 
-* System dependencies
+</p>
+<p>
+	
+	/jobs/:id/jobapps : created_by
+	
+</p>
+<p>
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<p>
+	<b>Searching for spacific title:</b>
+<p>
+	
+	localhost:3000/jobs?title=python
+	
+</p>
+</p>
