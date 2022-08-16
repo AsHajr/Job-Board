@@ -7,7 +7,7 @@
 <br>
 --Please remove the pdf extension :sweat_smile: --
 </b>
-[development.sqlite3.pdf](https://github.com/AsHajr/Job-Board/files/9349806/development.sqlite3)
+[development.sqlite3.pdf](https://github.com/AsHajr/Job-Board/files/9349806/development.sqlite3.pdf)
 <br>
 <br>
 <b>Here is a brief decumentation</b>
