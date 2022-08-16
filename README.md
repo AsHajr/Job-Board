@@ -2,6 +2,14 @@
 
 <b>Dcumentations are in the doc folder</b>
 <br>
+<br>
+<b>Here sqlit3 file is:
+<br>
+--Please remove the pdf extension :sweat_smile: --
+</b>
+[development.sqlite3.pdf](https://github.com/AsHajr/Job-Board/files/9349806/development.sqlite3)
+<br>
+<br>
 <b>Here is a brief decumentation</b>
 <br>
 <p>
@@ -38,3 +46,4 @@
 	
 </p>
 </p>
+
