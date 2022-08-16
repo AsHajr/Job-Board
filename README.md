@@ -1,8 +1,8 @@
 # README
 
-<summary><b>Dcumentations are in the doc folder</b></summary>
+<b>Dcumentations are in the doc folder</b>
 <br>
-<summary><b>Here is a brief decumentation</b></summary>
+<b>Here is a brief decumentation</b>
 <br>
 <p>
 	<b>POST requests parameters:</b>
