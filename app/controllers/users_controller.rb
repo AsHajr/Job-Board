@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     
     # return authenticated token upon signup
     # POST /signup
+    #  Parameters: name, email, password, password_confirmation
     def create
         user = User.create!(user_params)
         auth_token = AuthenticateUser.new(user.email, user.password).call

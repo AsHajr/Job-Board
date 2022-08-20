@@ -1,4 +1,4 @@
-Tue, 16 Aug 2022 12:06:54 +0300
+Tue, 16 Aug 2022 12:12:50 +0300
 README.md	Sat, 13 Aug 2022 14:00:39 +0300
 app/auth/authenticate_user.rb	Tue, 16 Aug 2022 01:22:11 +0300
 app/auth/authorize_api_request.rb	Tue, 16 Aug 2022 01:21:31 +0300
@@ -6,7 +6,7 @@ app/controllers/application_controller.rb	Tue, 16 Aug 2022 01:24:12 +0300
 app/controllers/authentication_controller.rb	Tue, 16 Aug 2022 01:23:04 +0300
 app/controllers/jobapps_controller.rb	Tue, 16 Aug 2022 12:00:53 +0300
 app/controllers/jobs_controller.rb	Tue, 16 Aug 2022 12:06:52 +0300
-app/controllers/users_controller.rb	Tue, 16 Aug 2022 01:23:40 +0300
+app/controllers/users_controller.rb	Tue, 16 Aug 2022 12:12:39 +0300
 app/jobs/application_job.rb	Sat, 13 Aug 2022 14:00:39 +0300
 app/lib/api_version.rb	Sun, 14 Aug 2022 15:54:38 +0300
 app/lib/json_web_token.rb	Tue, 16 Aug 2022 01:18:18 +0300

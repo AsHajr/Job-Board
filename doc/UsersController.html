@@ -109,8 +109,10 @@
         <div class="method-description">
           <p>return authenticated token upon signup POST /signup</p>
 
+<pre>Parameters: name, email, password, password_confirmation</pre>
+
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 7</span>
+            <pre><span class="ruby-comment"># File app/controllers/users_controller.rb, line 8</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>
     <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">create!</span>(<span class="ruby-identifier">user_params</span>)
     <span class="ruby-identifier">auth_token</span> = <span class="ruby-constant">AuthenticateUser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">user</span>.<span class="ruby-identifier">email</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">password</span>).<span class="ruby-identifier">call</span>
